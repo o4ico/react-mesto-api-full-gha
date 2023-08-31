@@ -1,0 +1,18 @@
+.header__exit-profile-button {
+  color: #A9A9A9;
+  text-align: right;
+  font-size: 18px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.header__exit-profile-button:hover {
+  opacity: 0.6;
+}

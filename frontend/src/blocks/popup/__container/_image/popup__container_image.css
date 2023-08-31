@@ -1,0 +1,23 @@
+.popup__container_image {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-end;
+  max-width: min-content;
+  max-height: max-content;
+  width: min-content;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+
+  .popup__container_image {
+  min-width: min-content;
+  padding: 0;
+  min-height: max-content;
+  }
+}

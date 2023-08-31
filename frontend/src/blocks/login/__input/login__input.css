@@ -1,0 +1,73 @@
+.login__input {
+  width: 100%;
+  max-width: 358px;
+  min-width: 260px;
+  border: 0;
+  color: #CCC;
+  border-bottom: 2px solid #CCC;
+  background-color: transparent;
+  position: static;
+  margin: 0 0 30px;
+  padding-bottom: 14px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  font-style: normal;
+}
+
+.login__input:last-of-type {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.login__input:focus {
+  outline: none;
+}
+
+.login__input::placeholder {
+  font-family: inherit;
+  color: #CCC;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.login__input::-webkit-input-placeholder {
+  font-family: inherit;
+  color: #CCC;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.login__input:-moz-placeholder {
+  font-family: inherit;
+  color: #CCC;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.login__input::-moz-placeholder {
+  font-family: inherit;
+  color: #CCC;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.login__input:-ms-input-placeholder {
+  font-family: inherit;
+  color: #CCC;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.login__input::-ms-input-placeholder {
+  font-family: inherit;
+  color: #CCC;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}

@@ -1,0 +1,28 @@
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 294px;
+  width: 100%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 495px) {
+
+  .profile__info {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  padding-left: 26px;
+  max-width: 189px;
+  }
+}
+
+@media screen and (min-width: 495px) and (max-width: 620px) {
+
+  .profile__info {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  }
+}

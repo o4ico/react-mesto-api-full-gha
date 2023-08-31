@@ -1,0 +1,17 @@
+.popup__status {
+  color: #000;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin: 32px 0 0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 420px) {
+
+  .popup__status {
+    margin: 40px 0 0;
+    font-size: 20px;
+  }
+}
