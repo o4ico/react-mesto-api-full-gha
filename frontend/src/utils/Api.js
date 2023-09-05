@@ -126,8 +126,8 @@ const getToken = () => {
 
 const api = new Api({
   //baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-66/',
-  //baseUrl: 'http://mesto.o4ico.nomoredomainsicu.ru:4000/',
-  baseUrl: 'http://127.0.0.1:4000/',
+  baseUrl: 'http://api.mesto.o4ico.nomoredomainsicu.ru/',
+  //baseUrl: 'http://127.0.0.1:4000/',
   headers: {
     Authorization: getToken(),
     'Content-Type': 'application/json'
