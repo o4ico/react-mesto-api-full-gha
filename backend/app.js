@@ -14,7 +14,7 @@ const { login, createUser } = require('./controllers/users');
 const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 4000, dataBaseURL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
+const { PORT = 3000, dataBaseURL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
 const app = express();
 
