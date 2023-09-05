@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Logo from "./Logo";
 
 function Login({
-  loggiedIn
+  loggedIn
 }) {
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ function Login({
   })
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
 
     setFormValue({
       ...formValue,
@@ -25,14 +25,15 @@ function Login({
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = formValue;
-    auth.authorize( email, password )
+    auth.authorize(email, password)
       .then((data) => {
-        if (data.token){// проверка, есть ли у данных token
-        localStorage.setItem('token', data.token)
-        setFormValue({email: '', password: ''});// сброс формы
-        navigate('/', {replace: true});
-        loggiedIn();// стейт loggedIn родительского App как true, стейт отвечающий за статус регистрации(сообщение об успехе или нет)
+        if (data.token) {// проверка, есть ли у данных token
+          localStorage.setItem('jwt', data.token);
         }
+        setFormValue({ email: '', password: '' });// сброс формы
+        navigate('/', { replace: true });
+        loggedIn();// стейт loggedIn родительского App как true, стейт отвечающий за статус входа, а также за попап информации о регистрации(сообщение об успехе или нет)
+        console.log(`какой токен? ${data.token}`);
       })
       .catch(err => console.log(err));
   }
@@ -77,8 +78,8 @@ function Login({
           </form>
         </section>
       </main>
-      < Footer/>
-    </>       
+      < Footer />
+    </>
   );
 }
 

@@ -5,8 +5,10 @@ const { BadRequestError } = require('../errors/BadRequestError');
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
-    .populate('owner')
-    .then((cards) => res.status(200).send(cards))
+    //.populate('owner')
+    //.populate('likes')
+    .then((cards) => res.status(200).send(cards.reverse()))
+    .then((cards) => console.log(cards))
     .catch((err) => next(err));
 };
 

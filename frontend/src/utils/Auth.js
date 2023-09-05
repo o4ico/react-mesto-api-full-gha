@@ -3,7 +3,7 @@ class Auth {
     this._url = baseUrl;
   }
 
-  _checkResponse (res) {
+  _checkResponse(res) {
     console.log(res)
     if (res.ok) {
       return res.json();
@@ -15,17 +15,17 @@ class Auth {
     return fetch(`${this._url}/signup`, {
       method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         email: email,
         password: password
       })
-      }
+    }
     )
-    .then((res) => {
-      return this._checkResponse(res);
-    })
+      .then((res) => {
+        return this._checkResponse(res);
+      })
   }
 
   authorize(email, password) {
@@ -33,17 +33,17 @@ class Auth {
     return fetch(url, {
       method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         email: email,
         password: password
       })
-      }
+    }
     )
-    .then(res => {
-      return this._checkResponse(res);
-    });
+      .then(res => {
+        return this._checkResponse(res);
+      });
   }
 
   getContent(token) {
@@ -51,15 +51,15 @@ class Auth {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
+        Authorization: token,
       }
     })
-    .then(res => {
-      return this._checkResponse(res);
-    });
-  } 
+      .then(res => {
+        return this._checkResponse(res);
+      });
+  }
 }
-
-const auth = new Auth('https://auth.nomoreparties.co');
+//const auth = new Auth('https://auth.nomoreparties.co');
+const auth = new Auth('http://127.0.0.1:4000');
 
 export default auth;

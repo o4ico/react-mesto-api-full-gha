@@ -11,8 +11,10 @@ const errorHandler = require('./middlewares/errorHandler');
 const { NotFoundError } = require('./errors/NotFoundError');
 const auth = require('./middlewares/auth');
 const { login, createUser } = require('./controllers/users');
+const cors = require('cors');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 3000, dataBaseURL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
+const { PORT = 4000, dataBaseURL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
 const app = express();
 
@@ -33,6 +35,10 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
+app.use(cors({ origin: ['http://localhost:3000', 'http://mesto.o4ico.nomoredomainsicu.ru'] }));
+
+app.use(requestLogger);
+
 app.use('/cards', auth, require('./routes/cards'));
 
 app.use('/users', auth, require('./routes/users'));
@@ -43,6 +49,8 @@ app.post('/signup', createUserValidation, createUser);
 app.use('*', (req, res, next) => {
   next(new NotFoundError('Запрашиваемый ресурс не найден'));
 });
+
+app.use(errorLogger);
 
 app.use(errors());
 
