@@ -33,7 +33,7 @@ function Login({
         setFormValue({ email: '', password: '' });// сброс формы
         navigate('/', { replace: true });
         loggedIn();// стейт loggedIn родительского App как true, стейт отвечающий за статус входа, а также за попап информации о регистрации(сообщение об успехе или нет)
-        console.log(`какой токен? ${data.token}`);
+        //console.log(`какой токен? ${data.token}`);
       })
       .catch(err => console.log(err));
   }

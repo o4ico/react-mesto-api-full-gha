@@ -9,6 +9,6 @@
 
 IP-адрес 158.160.78.126
 
-Frontend http://mesto.o4ico.nomoredomainsicu.ru
+Frontend https://mesto.o4ico.nomoredomainsicu.ru
 
-Backend http://api.mesto.o4ico.nomoredomainsicu.ru
+Backend https://api.mesto.o4ico.nomoredomainsicu.ru

@@ -35,7 +35,7 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-app.use(cors({ origin: ['http://localhost:3000', 'http://mesto.o4ico.nomoredomainsicu.ru'] }));
+app.use(cors({ origin: ['http://localhost:3000', 'https://mesto.o4ico.nomoredomainsicu.ru'] }));
 
 app.use(requestLogger);
 

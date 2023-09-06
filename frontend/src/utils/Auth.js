@@ -52,8 +52,8 @@ class Auth {
     return fetch(`${this._url}/users/me`, {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
         Authorization: getToken(),
+        'Content-Type': 'application/json'
       }
     })
       .then(res => {

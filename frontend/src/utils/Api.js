@@ -3,7 +3,6 @@ import getToken from './constants'
 class Api {
   constructor(config) {
     this._url = config.baseUrl;
-    this._headers = config.headers;
   }
 
   _checkResponse(res) {
@@ -16,7 +15,10 @@ class Api {
   getInitialCards() {
     return fetch(`${this._url}cards`, {
       method: 'GET',
-      headers: this._headers
+      headers: {
+        Authorization: getToken(),
+        'Content-Type': 'application/json'
+      }
     }
     )
       .then((res) => {
@@ -27,7 +29,10 @@ class Api {
   getInfoServer() {
     return fetch(`${this._url}users/me`, {
       method: 'GET',
-      headers: this._headers
+      headers: {
+        Authorization: getToken(),
+        'Content-Type': 'application/json'
+      }
     }
     )
       .then((res) => {
@@ -38,7 +43,10 @@ class Api {
   patchInfoServer(data) {
     return fetch(`${this._url}users/me`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        Authorization: getToken(),
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         name: data.name,
         about: data.about,
@@ -53,7 +61,10 @@ class Api {
   postCardServer(data) {
     return fetch(`${this._url}cards`, {
       method: 'POST',
-      headers: this._headers,
+      headers: {
+        Authorization: getToken(),
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         name: data.name,
         link: data.link
@@ -68,7 +79,10 @@ class Api {
   patchAvatarServer(data) {
     return fetch(`${this._url}users/me/avatar`, {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        Authorization: getToken(),
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         avatar: data.avatar
       })
@@ -82,7 +96,10 @@ class Api {
   _putLikeServer(cardId) {
     return fetch(`${this._url}cards/${cardId}/likes`, {
       method: 'PUT',
-      headers: this._headers
+      headers: {
+        Authorization: getToken(),
+        'Content-Type': 'application/json'
+      }
     }
     )
       .then((res) => {
@@ -93,7 +110,10 @@ class Api {
   _deleteLikeServer(cardId) {
     return fetch(`${this._url}cards/${cardId}/likes`, {
       method: 'DELETE',
-      headers: this._headers
+      headers: {
+        Authorization: getToken(),
+        'Content-Type': 'application/json'
+      }
     }
     )
       .then((res) => {
@@ -104,7 +124,10 @@ class Api {
   deleteCardServer(cardId) {
     return fetch(`${this._url}cards/${cardId}`, {
       method: 'DELETE',
-      headers: this._headers
+      headers: {
+        Authorization: getToken(),
+        'Content-Type': 'application/json'
+      }
     }
     )
       .then((res) => {
@@ -123,11 +146,7 @@ class Api {
 
 const api = new Api({
   baseUrl: 'http://api.mesto.o4ico.nomoredomainsicu.ru/',
-  //baseUrl: 'http://127.0.0.1:4000/',
-  headers: {
-    Authorization: getToken(),
-    'Content-Type': 'application/json'
-  }
+  //baseUrl: 'http://127.0.0.1:4000/'
 });
 
 export default api;
