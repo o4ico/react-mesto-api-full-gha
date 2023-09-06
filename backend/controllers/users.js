@@ -127,6 +127,7 @@ module.exports.login = (req, res, next) => {
 
 module.exports.getCurrentUserInfo = (req, res, next) => {
   const { _id } = req.user;
+  console.log(`в getCurrentUserInfo: ${req.user._id}`);
   User.findById(req.user._id)
     .then((user) => {
       if (!user) {

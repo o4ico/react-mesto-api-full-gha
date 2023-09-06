@@ -37,12 +37,26 @@ function App() {
 
   const navigate = useNavigate();
 
+
   React.useEffect(() => {
 
     const token = localStorage.getItem('jwt');
 
-    if (isLoggedIn) {
+    if (token) {
       auth.getContent(token)
+        .then((res) => {
+          setEmail(res.email);
+          setIsLoggedIn(true);
+          navigate("/", { replace: true });
+        })
+        .catch(console.error);
+    }
+  }, [navigate]);
+
+  React.useEffect(() => {
+
+    if (isLoggedIn) {
+      auth.getContent()
         //api.getInfoServer()
         .then((res) => {
           setCurrentUser(res);
@@ -132,6 +146,7 @@ function App() {
   }
 
   function handleUpdateCard(cardData) {
+    console.log(currentUser);
     api.postCardServer(cardData)
       .then((res) => {
         setCardsData([res, ...cardsData])
@@ -143,21 +158,6 @@ function App() {
   const handleLogin = () => {
     setIsLoggedIn(true);
   }
-
-  React.useEffect(() => {
-
-    const token = localStorage.getItem('jwt');
-
-    if (token) {
-      auth.getContent(token)
-        .then((res) => {
-          setEmail(res.email);
-          setIsLoggedIn(true);
-          navigate("/", { replace: true });
-        })
-        .catch(console.error);
-    }
-  }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem('jwt');

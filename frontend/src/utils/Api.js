@@ -1,3 +1,5 @@
+import getToken from './constants'
+
 class Api {
   constructor(config) {
     this._url = config.baseUrl;
@@ -117,11 +119,6 @@ class Api {
       return this._putLikeServer(cardId);
     }
   }
-}
-
-const getToken = () => {
-  const token = localStorage.getItem('jwt');
-  return token;
 }
 
 const api = new Api({

@@ -1,3 +1,5 @@
+import getToken from './constants'
+
 class Auth {
   constructor(baseUrl) {
     this._url = baseUrl;
@@ -46,12 +48,12 @@ class Auth {
       });
   }
 
-  getContent(token) {
+  getContent() {
     return fetch(`${this._url}/users/me`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: token,
+        Authorization: getToken(),
       }
     })
       .then(res => {
