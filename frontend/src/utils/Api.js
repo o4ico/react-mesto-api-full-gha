@@ -145,7 +145,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://api.mesto.o4ico.nomoredomainsicu.ru/',
+  baseUrl: 'https://api.mesto.o4ico.nomoredomainsicu.ru/',
   //baseUrl: 'http://127.0.0.1:4000/'
 });
 
