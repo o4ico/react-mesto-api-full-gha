@@ -6,12 +6,12 @@ const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const { loginValidation, createUserValidation } = require('./middlewares/validation');
 const errorHandler = require('./middlewares/errorHandler');
 const { NotFoundError } = require('./errors/NotFoundError');
 const auth = require('./middlewares/auth');
 const { login, createUser } = require('./controllers/users');
-const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 3000, dataBaseURL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;

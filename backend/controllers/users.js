@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs'); // импортируем bcrypt
 const jwt = require('jsonwebtoken'); // импортируем модуль jsonwebtoken
 const User = require('../models/user');
+
 const { SECRET_KEY } = process.env;
 const { ConflictError } = require('../errors/ConflictError');
 const { NotFoundError } = require('../errors/NotFoundError');
