@@ -57,7 +57,6 @@ function App() {
 
     if (isLoggedIn) {
       auth.getContent()
-        //api.getInfoServer()
         .then((res) => {
           setCurrentUser(res);
           console.log(`userInfo:`);
@@ -146,7 +145,6 @@ function App() {
   }
 
   function handleUpdateCard(cardData) {
-    console.log(currentUser);
     api.postCardServer(cardData)
       .then((res) => {
         setCardsData([res, ...cardsData])

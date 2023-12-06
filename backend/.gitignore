@@ -6,7 +6,7 @@
 .pnp.js
 .env
 *.log
-
+nginx.txt
 # testing
 /coverage
 

@@ -6,7 +6,6 @@ class Auth {
   }
 
   _checkResponse(res) {
-    console.log(res)
     if (res.ok) {
       return res.json();
     }
@@ -61,7 +60,7 @@ class Auth {
       });
   }
 }
-//const auth = new Auth('http://127.0.0.1:4000');
-const auth = new Auth('https://api.mesto.o4ico.nomoredomainsicu.ru');
+const auth = new Auth('http://127.0.0.1:4000');
+//const auth = new Auth('https://api.mesto.o4ico.nomoredomainsicu.ru');
 
 export default auth;
