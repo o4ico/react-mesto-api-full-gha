@@ -2,8 +2,8 @@
 
 # react-mesto-api-full
 
-[![добавление карточки](../preview/addCard.png)](../preview/preview)
-[![превью проекта](../preview/preview.png)](../preview/preview)
+![добавление карточки](./preview/addCard.png)
+![превью проекта](./preview/preview.png)
 
 ## 1. Описание
 
