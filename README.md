@@ -28,7 +28,6 @@
 ![Express](https://camo.githubusercontent.com/7f73136d92799b19be179d1ed87b461120c35ed917c7d5ab59a7606209da7bd3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f457870726573732e6a732d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d65787072657373266c6f676f436f6c6f723d7768697465)
 ![MongoDB](https://camo.githubusercontent.com/72e92f69f36703548704a9eeda2a9889c2756b5e08f01a9aec6e658c148d014e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6f6e676f44422d3445413934423f7374796c653d666f722d7468652d6261646765266c6f676f3d6d6f6e676f6462266c6f676f436f6c6f723d7768697465)
 
-Иконка React Иконка React Router Иконка 'JavaScript' Иконка CSS3 Иконка HTML5 Иконка 'Express' Иконка 'Node JS' Иконка 'MongoDB' Иконка 'NGINX'
 ## 3. Развертывание проекта локально
 
 1. `git clone https://github.com/o4ico/react-mesto-api-full-gha.git` - клонировать репозиторий (HTTPS) на свое устройство
